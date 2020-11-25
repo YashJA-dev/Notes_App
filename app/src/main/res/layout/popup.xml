@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="75dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/gradiant_background"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/title_cont_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/title_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="Title"
+                    android:padding="7dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/tab_indicator_text"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/description_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="Description"
+                    android:padding="7dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/tab_indicator_text"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_cont_edit"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleNot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/tab_indicator_text"
+                    android:text="Note:"/>
+
+                <EditText
+                    android:id="@+id/new_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="510dp"
+                    android:fontFamily="@font/architects_daughter"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="22dp"
+                    android:textStyle="italic|bold" />
+
+                <RelativeLayout
+                    android:id="@+id/btn_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="25dp"
+                        android:background="@drawable/bg"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:text="show"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/goback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="25dp"
+                        android:background="@drawable/bg"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:text="go back"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
