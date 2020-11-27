@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Adapter_Costum.SetRecycleViewOnClickListener listener;
     FloatingActionButton actionButton;
     Dialog dialog;
+    ArrayList<Notes> mlist;
     EditText discription, title, note;
     Button goback, show;
     ViewModelC viewModelC;
@@ -199,8 +200,25 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.deleteAll_menu:
-                viewModelC.deleteAll();
-                Toast.makeText(MainActivity.this, "all notes deleted", Toast.LENGTH_SHORT).show();
+                viewModelC.getMylist().observe(MainActivity.this, new Observer<List<Notes>>() {
+                    @Override
+                    public void onChanged(List<Notes> notes) {
+                        mlist=(ArrayList<Notes>) notes;
+                    }
+                });
+                if(mlist.size()==0){
+                    Snackbar.make(findViewById(R.id.coordinat_la),"No Note Avilable!\nClick on create button .",Snackbar.LENGTH_INDEFINITE).setActionTextColor(Color.WHITE)
+                            .setAction("Create", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    popup();
+                                }
+                            }).show();
+                }else {
+                    viewModelC.deleteAll();
+                    Toast.makeText(MainActivity.this, "all notes deleted", Toast.LENGTH_SHORT).show();
+                }
+
         }
         return super.onOptionsItemSelected(item);
     }
